@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  text-decoration: none !important;
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+body {
+  background-color: #0d0714;
+  height: 100vh;
+  width: 100vw;
+}
+
+.toDoList {
+  background-color: #1d1825;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 7rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.inputField {
+  margin: 3rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputField input {
+  background-color: transparent;
+  color: #777777;
+  border: 1px solid #9e78cf;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 40px;
+  width: 25vw;
+}
+.inputField input:focus {
+  outline: none;
+}
+
+.inputField button {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  background-color: #9e78cf;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tasksToDo {
+  color: white;
+  margin: 0 0 1rem 4rem;
+}
+
+.toDoList ul {
+  margin: 0 3.75rem 3rem 3.75rem;
+}
+
+.toDoList ul li {
+  height: 75px;
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #15101c;
+  color: #9e78cf;
+}
+
+
+.toDoList ul li:first-child {
+  margin-top: 0;
+}
+.toDoList ul li:last-child {
+  margin-bottom: 0;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.toDoList ul li button {
+  background-color: transparent;
+  border: none;
+}
+
+@media only screen and (max-width: 1280px) {
+  .toDoList {
+    width: 90vw;
+    margin-top: 2rem;
+  }
+  .inputField input {
+    width: 65vw;
+  }
+}
