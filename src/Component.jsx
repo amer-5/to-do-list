@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [toDoList, setToDoList] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const [tasksToDo, setTasksToDo] = useState(toDoList.length);
 
   function handleInputChange(event) {
     setNewTask(event.target.value);
@@ -13,16 +14,20 @@ function App() {
     if (newTask.trim() !== "") {
       setToDoList((t) => [...t, newTask]);
       setNewTask("");
+      setTasksToDo((t) => t + 1);
     }
   }
 
   function removeToDo(index) {
     // remove task from array
     setToDoList((t) => t.filter((t, i) => i !== index));
+    setTasksToDo((t) => t - 1);
   }
   function markAsDone(index) {
     // add done class to task
+    console.log(tasksToDo)
     document.getElementById(`todo-${index}`).classList.add("done");
+    setTasksToDo((t) => t - 1);
   }
 
   return (
@@ -50,7 +55,7 @@ function App() {
             </svg>
           </button>
         </div>
-        <p className="tasksToDo">Tasks to do - {toDoList.length}</p>
+        <p className="tasksToDo">Tasks to do - {tasksToDo}</p>
         <ul>
           {toDoList.map((task, index) => (
             <li key={index} id={`todo-${index}`}>
